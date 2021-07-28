@@ -59,6 +59,7 @@ android {
 }
 
 multiplatformSwiftPackage {
+    outputDirectory(File(rootProject.projectDir, "swiftpackage"))
     packageName("MyApp")
     swiftToolsVersion("5.3")
     targetPlatforms {
