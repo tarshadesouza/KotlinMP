@@ -63,8 +63,10 @@ android {
 }
 
 multiplatformSwiftPackage {
-    outputDirectory(File("/Users/tsouza/AndroidStudioProjects/GitTest"))
+    //outputDirectory(File("/Users/tsouza/AndroidStudioProjects/GitTest"))
     packageName("MyApp")
+    outputDirectory(File(rootDir, "/"))
+
     swiftToolsVersion("5.3")
     targetPlatforms {
         iOS { v("13") }
