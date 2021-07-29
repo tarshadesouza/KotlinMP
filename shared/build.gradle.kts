@@ -10,15 +10,18 @@ plugins {
 version = "1.0"
 
 kotlin {
+    val ktor = "1.6.1"
+
     android()
 
-    val iosTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget =
-        if (System.getenv("SDK_NAME")?.startsWith("iphoneos") == true)
-            ::iosArm64
-        else
-            ::iosX64
+    val sdkName: String? = System.getenv("SDK_NAME")
 
-    iosTarget("ios") {}
+    val isiOSDevice = sdkName.orEmpty().startsWith("iphoneos")
+    if (isiOSDevice) {
+        iosArm64("iOS")
+    } else {
+        iosX64("iOS")
+    }
     macosX64("macOS")
 
     cocoapods {
@@ -44,8 +47,9 @@ kotlin {
                 implementation("junit:junit:4.13.2")
             }
         }
-        val iosMain by getting
-        val iosTest by getting
+        val iOSMain by getting
+        val macOSMain by getting
+        val iOSTest by getting
     }
 }
 
@@ -59,10 +63,12 @@ android {
 }
 
 multiplatformSwiftPackage {
-    outputDirectory(File(rootProject.projectDir, "swiftpackage"))
+    outputDirectory(File("/Users/tsouza/AndroidStudioProjects/GitTest"))
     packageName("MyApp")
     swiftToolsVersion("5.3")
     targetPlatforms {
         iOS { v("13") }
+
+         macOS { v("13") }
     }
 }
