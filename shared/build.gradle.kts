@@ -68,7 +68,6 @@ multiplatformSwiftPackage {
     swiftToolsVersion("5.3")
     targetPlatforms {
         iOS { v("13") }
-
-         macOS { v("13") }
+        macOS { v("11") }
     }
 }

@@ -5,7 +5,7 @@ let package = Package(
     name: "MyApp",
     platforms: [
         .iOS(.v13),
-.macOS(.v13)
+.macOS(.v11)
     ],
     products: [
         .library(
