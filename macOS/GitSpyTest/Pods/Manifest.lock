@@ -1,0 +1,16 @@
+PODS:
+  - shared (1.0)
+
+DEPENDENCIES:
+  - shared (from `/Users/tsouza/AndroidStudioProjects/GitTest/shared`)
+
+EXTERNAL SOURCES:
+  shared:
+    :path: "/Users/tsouza/AndroidStudioProjects/GitTest/shared"
+
+SPEC CHECKSUMS:
+  shared: 64ca657fe774c3e14d65578bcb24ebabadfd8973
+
+PODFILE CHECKSUM: 54b9bbf0e13eefa6ad5ecbdda9255f7fffa12a5a
+
+COCOAPODS: 1.10.1

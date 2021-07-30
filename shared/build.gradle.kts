@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+val ktorVersion = "1.5.0"
 
 plugins {
     kotlin("multiplatform")
@@ -27,8 +28,7 @@ kotlin {
     cocoapods {
         summary = "Some description for the Shared Module"
         homepage = "Link to the Shared Module homepage"
-        ios.deploymentTarget = "14.1"
-        frameworkName = "shared"
+        frameworkName = "sharedKMP"
         podfile = project.file("../iosApp/Podfile")
     }
     
@@ -47,8 +47,16 @@ kotlin {
                 implementation("junit:junit:4.13.2")
             }
         }
-        val iOSMain by getting
-        val macOSMain by getting
+        val iOSMain by getting {
+            dependencies {
+                implementation("io.ktor:ktor-client-ios:$ktorVersion")
+            }
+        }
+        val macOSMain by getting {
+            dependencies {
+                implementation("io.ktor:ktor-client-ios:$ktorVersion")
+            }
+        }
         val iOSTest by getting
     }
 }

@@ -1,0 +1,12 @@
+
+target 'GitSpyTest' do
+  use_frameworks!
+
+  # Pods for GitSpyTest
+    platform :osx, '11.00'
+
+#    pod 'shared', :path => '../../shared'
+    pod 'shared', :path => '/Users/tsouza/AndroidStudioProjects/GitTest/shared'
+
+
+end
